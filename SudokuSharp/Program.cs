@@ -38,7 +38,7 @@ namespace SudokuSharp
 
         static void Main(string[] args)
         {
-            //testSudokuSolver();
+            testSudokuSolver();
             testSudokuGenerator();
 
             Console.ReadKey();

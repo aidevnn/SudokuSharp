@@ -59,6 +59,12 @@ namespace SudokuGame
         {
             checkEmptyCell();
             checkPossiblesContentsAll();
+        }
+
+        public void UpdateCellsStateAndTest()
+        {
+            checkEmptyCell();
+            checkPossiblesContentsAll();
 
             testCellsAll();
         }
