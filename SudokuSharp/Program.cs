@@ -29,8 +29,11 @@ namespace SudokuSharp
 
         static void testSudokuGenerator()
         {
-            SudokuGenerator sudokuGenerator = new SudokuGenerator(1, Level.All);
-            sudokuGenerator.Execute();
+            SudokuGenerator sudokuGenerator0 = new SudokuGenerator(1, Level.All);
+            sudokuGenerator0.Execute();
+
+            SudokuGenerator sudokuGenerator1 = new SudokuGenerator(2);
+            sudokuGenerator1.ExecuteAll();
         }
 
         static void Main(string[] args)

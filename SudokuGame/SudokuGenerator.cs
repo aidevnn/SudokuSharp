@@ -84,6 +84,22 @@ namespace SudokuGame
             }
         }
 
+        void createAll(string gridStr)
+        {
+            var grid0 = Commons.GridFromString(gridStr);
+            var grid1 = Commons.CreateGrid(grid0, l => l == Solving.VeryEasy, Level.Easy);
+            AllGrids[Level.Easy].Add(grid1.ToString());
+
+            var grid2 = Commons.CreateGrid(grid1, l => l != Solving.Impossible, Level.Medium, 10);
+            AllGrids[Level.Medium].Add(grid2.ToString());
+
+            var grid3 = Commons.CreateGrid(grid2, l => l != Solving.Impossible, Level.Hard);
+            AllGrids[Level.Hard].Add(grid3.ToString());
+
+            var grid4 = Commons.CreateGrid(grid3, l => l == Solving.Impossible, Level.Evil, 1);
+            AllGrids[Level.Evil].Add(grid4.ToString());
+        }
+
         void displayGeneratedGrids()
         {
             foreach(var e in AllGrids)
@@ -95,6 +111,22 @@ namespace SudokuGame
                 foreach (var s in e.Value)
                     Console.WriteLine(s);
             }
+
+            Console.WriteLine();
+        }
+
+        public void ExecuteAll()
+        {
+            prepareFullGrids();
+            int ct = 0;
+
+            foreach (var gridStr in gridFull)
+            {
+                Console.WriteLine($"Generation:{++ct}");
+                createAll(gridStr);
+            }
+
+            displayGeneratedGrids();
         }
 
         public void Execute()
