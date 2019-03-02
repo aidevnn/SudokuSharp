@@ -1,9 +1,7 @@
 # SudokuSharp
 Sudoku solver and generator with  4 levels : Easy / Medium / Hard / Evil
 
-Example.
-
-Solving an empty grid
+### Solving an empty grid
 
 ```
 var gridEmpty = string.Join(" ", Enumerable.Repeat(0, 81)); // 0 0 0 .... 0 
@@ -19,7 +17,7 @@ NbBacktrack = 1; Cells = 0; AllMoves = 81
 6 7 1 4 2 3 9 5 8 4 9 2 5 8 1 7 3 6 3 8 5 6 9 7 1 4 2 9 2 6 1 7 5 4 8 3 1 5 8 3 4 2 6 7 9 7 4 3 9 6 8 5 2 1 5 6 7 8 3 9 2 1 4 8 1 9 2 5 4 3 6 7 2 3 4 7 1 6 8 9 5
 ```
 
-Solving an Evil grid from resource
+### Solving an evil grid from resource
 
 ```
 var gridsEvil = Properties.Resources.GridEvil.Split('\n').ToArray();
@@ -59,7 +57,7 @@ NbBacktrack = 1; Cells = 24; AllMoves = 57
 854|916|237
 ```
 
-Generating multiple grids of all difficulties
+### Generating multiple grids of all difficulties
 
 ```
 SudokuGenerator sudokuGenerator = new SudokuGenerator(gridsPerLevel: 1);
